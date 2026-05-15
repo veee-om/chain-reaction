@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vyom ki Zip Zap Zoom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="setup-screen" id="setupScreen" aria-labelledby="setupTitle">
+      <div class="setup-copy">
+        <p class="eyebrow">Pass & Play</p>
+        <h1 id="setupTitle">Vyom ki Zip Zap Zoom</h1>
+      </div>
+
+      <form class="setup-panel" id="setupForm">
+        <div class="setup-header">
+          <div>
+            <p class="eyebrow">Setup</p>
+            <h2>Choose Players</h2>
+          </div>
+
+          <label class="player-count-control">
+            <span>Players</span>
+            <select id="playerCountSelect" aria-label="Number of players">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="player-fields" id="playerFields"></div>
+
+        <button class="primary-button" type="submit">Start Game</button>
+      </form>
+    </section>
+
+    <section class="game-screen hidden" id="gameScreen" aria-label="Game board">
+      <section class="top-panel" aria-label="Game status">
+        <div>
+          <p class="eyebrow">Pass & Play</p>
+          <h1>Vyom ki Zip Zap Zoom</h1>
+        </div>
+
+        <div class="status-card" id="statusCard">
+          <span class="turn-dot" id="turnDot"></span>
+          <div>
+            <p class="status-label">Current Turn</p>
+            <p class="status-text" id="turnText">Player 1</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="score-row" id="scoreRow" aria-label="Player orb counts"></section>
+
+      <section class="board-wrap" aria-label="Chain Reaction board">
+        <div class="board" id="board"></div>
+      </section>
+
+      <div class="actions">
+        <button class="secondary-button" id="setupButton" type="button">New Players</button>
+        <button class="restart-button" id="restartButton" type="button">Restart Game</button>
+      </div>
+    </section>
+  </main>
+
+  <section class="winner-overlay hidden" id="winnerOverlay" aria-live="polite">
+    <div class="winner-panel">
+      <p class="eyebrow">Game Over</p>
+      <h2 id="winnerText">Player wins</h2>
+      <button class="restart-button" id="overlayRestartButton" type="button">Play Again</button>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
