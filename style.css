@@ -318,8 +318,16 @@ h2 {
   top: 50%;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+}
+
+.orb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   background: radial-gradient(circle at 33% 28%, var(--player-highlight), var(--player-color) 44%, var(--player-dark) 100%);
   box-shadow: 0 0 16px color-mix(in srgb, var(--player-color) 84%, transparent), 0 0 34px color-mix(in srgb, var(--player-color) 36%, transparent);
+  animation: orbPulseSpin 1.9s linear infinite;
 }
 
 .orb.count-2:nth-child(1) {
@@ -400,6 +408,21 @@ h2 {
 .winner-panel h2 {
   margin-bottom: 20px;
   font-size: clamp(2rem, 9vw, 3.8rem);
+}
+
+@keyframes orbPulseSpin {
+  0% {
+    filter: brightness(1);
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    filter: brightness(1.26);
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    filter: brightness(1);
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 @keyframes explodeCell {
